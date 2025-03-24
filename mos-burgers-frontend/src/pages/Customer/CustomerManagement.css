@@ -1,7 +1,7 @@
-.container {
+.customer-container {
     display: flex;
     height: 100vh;
-    background-color: #1e1e2e; 
+    
   
    
   }
@@ -16,16 +16,10 @@
     padding: 20px 0;
   }
   
-  .inventory-content {
+  .customer-content {
     margin-left: 250px; 
     flex-grow: 1;
     padding: 20px;
     background-color: #fcfcfc;
     min-height: 100vh;
   }
-  
-  .inventory-content h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  

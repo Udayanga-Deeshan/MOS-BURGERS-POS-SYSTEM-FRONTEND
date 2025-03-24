@@ -27,7 +27,7 @@ const Sidebar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/menu">
+          <Link to="/stock">
             <ClipboardList size={20} />
             <span>Inventory</span>
           </Link>

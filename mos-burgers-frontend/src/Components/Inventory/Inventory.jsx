@@ -1,4 +1,5 @@
 import React from 'react'
+import './Inventory.css'
 import Sidebar from '../Sidebar/Sidebar'
 
 

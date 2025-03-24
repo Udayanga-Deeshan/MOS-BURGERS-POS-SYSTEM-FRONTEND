@@ -18,7 +18,7 @@ const HomePage = () => {
               </li>
 
               <li>
-                <p onClick={() => navigate("/customer")}>Manage Customers</p>
+                <p onClick={() => navigate("/customers")}>Manage Customers</p>
               </li>
               <li>
                 <p onClick={() => navigate("/stock")}>Inventory</p>
