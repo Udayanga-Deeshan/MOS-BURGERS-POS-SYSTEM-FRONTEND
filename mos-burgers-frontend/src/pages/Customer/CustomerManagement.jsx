@@ -1,5 +1,6 @@
 import React from 'react'
 import Sidebar from '../../Components/Sidebar/Sidebar'
+import './CustomerManagement.css'
 
 
 const CustomerManagement = () => {

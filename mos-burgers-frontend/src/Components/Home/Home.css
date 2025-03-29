@@ -95,7 +95,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/src/assets/main-backgroundImage.jpg') center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/src/assets/main-background.jpg') ;
+    background-size: cover;
+background-position: bottom;
     z-index: 1;
 }
 
