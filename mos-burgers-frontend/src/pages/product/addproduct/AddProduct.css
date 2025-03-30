@@ -1,0 +1,113 @@
+.add-product-page {
+    display: flex;
+    height: 100vh;
+    margin-left: 250px;
+    justify-content: center;
+    align-items: center;
+    background: url('/src/assets/items-list-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .add-product-container {
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.7); 
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+    z-index: 2;
+    position: relative;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .input-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .add-product-input-group{
+    width: 48%; 
+  }
+  
+  label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .product-data {
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    margin-top: 5px;
+    width: 100%;
+  }
+  
+  .product-data select {
+    background-color: rgba(255, 255, 255, 0.8); 
+    color: #333;
+  }
+  
+  .product-data {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+  }
+  
+  input[type="file"] {
+    background-color: transparent;
+    padding: 5px;
+  }
+  
+  input:focus, select:focus {
+    border-color: #0056b3;
+  }
+  
+  .btn-add-product {
+    padding: 10px;
+    background: #ff9800;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-add-product:hover {
+    background: #e68900;
+  }
+  
+ 
+  .image-preview {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .preview-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-top: 5px;
+    z-index: 1;
+  }
+  

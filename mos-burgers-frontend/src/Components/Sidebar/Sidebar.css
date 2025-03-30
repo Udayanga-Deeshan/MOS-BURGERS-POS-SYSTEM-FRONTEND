@@ -1,7 +1,7 @@
 .sidebar {
     width: 250px;
     height: 100vh;
-    background: #1e1e2e;
+    background: #070708 !important;
     color: #fff;
     position: fixed;
     left: 0;
@@ -40,7 +40,7 @@
   }
   
   .menu li a:hover {
-    background: #28293d;
+    background: #000000;
   }
   
   .menu li a svg {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Inventory.css";
 import Sidebar from '../Sidebar/Sidebar'
+import { Link } from "react-router-dom";
 
 
 const Inventory = () => {
@@ -21,7 +22,10 @@ const Inventory = () => {
     <div className="inventory-page">
         <Sidebar/>
       <div className="inventory-container">
+        <Link to="/add-product" style={{textDecoration:"none"}}>
         <button className="add-product-btn">Add Product</button>
+        </Link>
+        
         <div className="product-list">
           {products.map((product) => (
             <div key={product.itemId} className="product-card">
