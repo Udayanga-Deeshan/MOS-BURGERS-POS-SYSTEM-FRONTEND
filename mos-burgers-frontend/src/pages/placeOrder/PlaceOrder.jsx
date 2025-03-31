@@ -6,17 +6,17 @@ const PlaceOrder = () => {
   const [products, setProducts] = useState([
     { id: 1, name: "Cheese Burger", category: "Burger", price: 500.99, image: "/src/assets/Burgers/burger1.jpg" },
     { id: 2, name: "Chicken Burger", category: "Burger", price: 600.99, image: "/src/assets/Burgers/burger4.jpg" },
-    { id: 2, name: "Chicken Burger", category: "Burger", price: 600.99, image: "/src/assets/Burgers/burger4.jpg" },
-    { id: 2, name: "Chicken Burger", category: "Burger", price: 600.99, image: "/src/assets/Burgers/burger4.jpg" },
-    { id: 2, name: "Chicken Burger", category: "Burger", price: 600.99, image: "/src/assets/Burgers/burger4.jpg" },
-    { id: 2, name: "Chicken Burger", category: "Burger", price: 600.99, image: "/src/assets/Burgers/burger4.jpg" },
-    { id: 2, name: "Chicken Burger", category: "Burger", price: 600.99, image: "/src/assets/Burgers/burger4.jpg" },
+    { id: 3, name: "chicken regular Submarine", category: "Submarine", price: 750.99, image: "/src/assets/chicken-submarine.jpg" },
+    { id: 4, name: "Crispy Chicken Submarine", category: "Submarine", price: 860.99, image: "/src/assets/Crispy-Chicken-Submarine .jpg" },
+    { id: 5, name: "Coke", category: "Beverages", price: 200.99, image: "/src/assets/coke.jpeg" },
+    { id: 6, name: "Pepsi", category: "Beverages", price: 250.99, image: "/src/assets/bervarage1.jpeg" },
   ]);
-  
+
   const [cart, setCart] = useState([]);
   const [customerName, setCustomerName] = useState("");
   const [phone, setPhone] = useState("");
   const [amountGiven, setAmountGiven] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   const addToCart = (product) => {
     setCart((prevCart) => {
@@ -43,13 +43,28 @@ const PlaceOrder = () => {
   const totalAmount = cart.reduce((sum, item) => sum + item.qty * item.price, 0);
   const balance = amountGiven ? amountGiven - totalAmount : 0;
 
+  const filteredProducts = selectedCategory === "All"
+    ? products
+    : products.filter(product => product.category === selectedCategory);
+
   return (
     <div className="pos-page">
       <Sidebar />
       <div className="products-container">
         <h2>Available Products</h2>
+        <div className="category-filters">
+          {["All", "Burger", "Submarine", "Beverages"].map(category => (
+            <button
+              key={category}
+              className={selectedCategory === category ? "active" : ""}
+              onClick={() => setSelectedCategory(category)}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
         <div className="products-grid">
-          {products.map((product) => (
+          {filteredProducts.map((product) => (
             <div key={product.id} className="product-card">
               <img src={product.image} alt={product.name} className="product-image" />
               <h3>{product.name}</h3>
@@ -96,7 +111,7 @@ const PlaceOrder = () => {
         />
         <h3>Total: Rs.{totalAmount.toFixed(2)}</h3>
         <h3>Balance: Rs.{balance.toFixed(2)}</h3>
-        <button className="place-order-button">Place Order</button>
+        <button className="place-order-btn">Place Order</button>
       </div>
     </div>
   );
