@@ -27,7 +27,7 @@ const AddProduct = () => {
             <div className="add-product-input-group">
               <label>Category:</label>
               <select
-              className="product-data"
+              className="product-data-cmb"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
                 required
@@ -52,7 +52,7 @@ const AddProduct = () => {
           </div>
 
           <label>Upload Image:</label>
-          <input type="file" accept="image/*" onChange={handleImageChange} required className="product-data"/>
+          <input type="file" accept="image/*" onChange={handleImageChange} required className="product-image-data"/>
 
           {image && (
             <div className="image-preview">

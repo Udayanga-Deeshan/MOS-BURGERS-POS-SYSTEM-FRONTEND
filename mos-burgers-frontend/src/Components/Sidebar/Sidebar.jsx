@@ -21,7 +21,7 @@ const Sidebar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/orders">
+          <Link to="/place-order">
             <ShoppingCart size={20} />
             <span>Orders</span>
           </Link>
