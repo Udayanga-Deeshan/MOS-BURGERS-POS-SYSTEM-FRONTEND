@@ -45,6 +45,10 @@
   .add-product-input-group{
     width: 48%; 
   }
+
+  .add-product-price{
+    width: 100%;
+  }
   
   label {
     font-size: 16px;
