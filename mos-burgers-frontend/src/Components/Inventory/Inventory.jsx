@@ -1,22 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Inventory.css";
 import Sidebar from '../Sidebar/Sidebar'
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 
 const Inventory = () => {
-  const [products, setProducts] = useState([
-    { itemId: 1, itemName: "Cheese Burger", category: "Burger", price: 5.99, itemDiscount: 0.5, imageURL: "/src/assets/Burgers/burger1.jpg" },
-    { itemId: 2, itemName: "Chicken Burger", category: "Burger", price: 6.99, itemDiscount: 1.0, imageURL: "/src/assets/Burgers/burger4.jpg" },
-    { itemId: 2, itemName: "Chicken Burger", category: "Burger", price: 6.99, itemDiscount: 1.0, imageURL: "/src/assets/Burgers/burger4.jpg" },
-    { itemId: 2, itemName: "Chicken Burger", category: "Burger", price: 6.99, itemDiscount: 1.0, imageURL: "/src/assets/Burgers/burger4.jpg" },
-    { itemId: 2, itemName: "Chicken Burger", category: "Burger", price: 6.99, itemDiscount: 1.0, imageURL: "/src/assets/Fries/Fries1.jpg" },
-    { itemId: 2, itemName: "Chicken Burger", category: "Burger", price: 6.99, itemDiscount: 1.0, imageURL: "/src/assets/Fries/Fries1.jpg" },
-    { itemId: 2, itemName: "Chicken Burger", category: "Burger", price: 6.99, itemDiscount: 1.0, imageURL: "/src/assets/Fries/Fries1.jpg" },
-    { itemId: 2, itemName: "Chicken Burger", category: "Burger", price: 6.99, itemDiscount: 1.0, imageURL: "/src/assets/Burgers/burger5.jpg" },
-    { itemId: 2, itemName: "Chicken Burger", category: "Burger", price: 6.99, itemDiscount: 1.0, imageURL: "/src/assets/Burgers/burger5.jpg" },
-    { itemId: 2, itemName: "Chicken Burger", category: "Burger", price: 6.99, itemDiscount: 1.0, imageURL: "/src/assets/Burgers/burger5.jpg" },
-  ]);
+  const [products, setProducts] = useState([]);
+
+  useEffect(()=>{
+    axios.get("http://localhost:8080/api/stock/All")
+    .then((response)=>{
+      setProducts(response.data)
+    })
+    .catch((error)=>{
+      console.error("Error fetching products:", error);
+    })
+  },[])
 
   return (
     <div className="inventory-page">
@@ -33,7 +33,6 @@ const Inventory = () => {
               <h3>{product.itemName}</h3>
               <p>Category: {product.category}</p>
               <p>Price: Rs.{product.price.toFixed(2)}</p>
-              <p>Discount: Rs.{product.itemDiscount.toFixed(2)}</p>
               <div className="card-buttons">
                 <button className="edit-btn">Edit</button>
                 <button className="delete-btn">Delete</button>

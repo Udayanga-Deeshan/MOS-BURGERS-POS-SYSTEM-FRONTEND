@@ -164,3 +164,16 @@ button:hover {
     background-color: #e6b800;
     color: black;
 }
+
+.remove-item-icon {
+    font-size: 20px;
+    color: #ffcc00;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 5px;
+}
+
+.remove-item-icon:hover {
+    color: #e6b800;
+}
+
