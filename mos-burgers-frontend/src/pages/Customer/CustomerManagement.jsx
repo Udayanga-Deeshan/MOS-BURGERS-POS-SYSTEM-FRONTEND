@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import "./CustomerManagement.css";
+import { Link } from "react-router-dom";
 
 const CustomerManagement = () => {
   const [customers, setCustomers] = useState([]);
@@ -11,14 +12,14 @@ const CustomerManagement = () => {
       {
         id: 1,
         name: "Sasmitha",
-        address:"234/2 Powerhouse",
+        address: "234/2 Powerhouse",
         phone: "1234567890",
         email: "sasmitha@gmail.com",
       },
       {
         id: 2,
         name: "Jane Smith",
-        address:"434/2 Ganemulla",
+        address: "434/2 Ganemulla",
         phone: "9876543210",
         email: "jane@gmail.com",
       },
@@ -33,13 +34,19 @@ const CustomerManagement = () => {
       <Sidebar />
       <div className="customer-management-container">
         <div className="top-bar">
-          <button className="btn-add-customer">+ Add Customer</button>
+          <Link
+            to={"/customer/add-customer"}
+            style={{ textDecoration: "none" }}
+          >
+            <button className="btn-add-customer">+ Add Customer</button>
+          </Link>
+
           <input
             type="text"
             placeholder="Search by Name"
             className="search-input"
             value={searchQuery}
-            onChange={(e)=>setSearchQuery(e.target.value)}
+            onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
 
@@ -52,6 +59,7 @@ const CustomerManagement = () => {
                 <th>Address</th>
                 <th>Phone</th>
                 <th>Email</th>
+                <th style={{textAlign:"center"}}>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -62,17 +70,22 @@ const CustomerManagement = () => {
                   <td>{customer.address}</td>
                   <td>{customer.phone}</td>
                   <td>{customer.email}</td>
+                  <td>
+                    <div className="action-buttons">
+                      <button className="btn-edit">Edit</button>
+                      <button className="btn-delete">Delete</button>
+                    </div>
+                  </td>
                 </tr>
               ))}
 
-              {filteredCustomers.length ==0 &&(
-                  <tr>
+              {filteredCustomers.length == 0 && (
+                <tr>
                   <td colSpan="4" className="no-data">
                     No customers found
                   </td>
                 </tr>
               )}
-              
             </tbody>
           </table>
         </div>

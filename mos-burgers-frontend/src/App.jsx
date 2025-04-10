@@ -8,6 +8,7 @@ import CustomerManagement from "./pages/Customer/CustomerManagement";
 import Login from "./pages/Login/Login";
 import AddProduct from "./pages/product/addproduct/AddProduct";
 import PlaceOrder from "./pages/placeOrder/PlaceOrder";
+import AddCustomer from "./pages/Customer/addcustomer/AddCustomer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/customers" element={<CustomerManagement />} />
           <Route path="/add-product" element={<AddProduct/>}/>
           <Route path="/place-order" element={<PlaceOrder/>}/>
+          <Route path="/customer/add-customer" element={<AddCustomer/>}/>
         </Routes>
       </BrowserRouter>
     </div>

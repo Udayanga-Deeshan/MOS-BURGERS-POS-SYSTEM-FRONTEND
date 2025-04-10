@@ -1,0 +1,85 @@
+.add-customer-page {
+    display: flex;
+    height: 100vh;
+    margin-left: 250px; 
+    justify-content: center;
+    align-items: center;
+    background: url('/src/assets/items-list-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .add-customer-container {
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.7); 
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+    z-index: 2;
+    position: relative;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .add-customer-input-group {
+    width: 100%; 
+  }
+  
+  label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .customer-data {
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    margin-top: 5px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #141413;
+    font-weight: 800;
+  }
+  
+  .customer-data:focus {
+    border-color: #0056b3;
+  }
+  
+  .btn-add-customer {
+    padding: 10px;
+    background: #ff9800;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  .btn-add-customer:hover {
+    background: #e68900;
+  }
+  
+
+  
+  
+  
