@@ -9,6 +9,7 @@ const AddProduct = () => {
   const [category, setCategory] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState(null);
+  const[description,setDescription] = useState("");
   const [loading, setLoading] = useState(false); 
 
   const handleImageChange = async (e) => {
@@ -67,7 +68,8 @@ const AddProduct = () => {
         itemName: productName,
         category: category.toUpperCase(),
         price: parseFloat(price),
-        imageURL: imageUrl, 
+        imageURL: imageUrl,
+        description:description
       };
 
       
@@ -82,6 +84,7 @@ const AddProduct = () => {
         setProductName("");
         setCategory("");
         setPrice("");
+        setDescription("");
         setImage(null);
       } else {
         throw new Error("Failed to save product data to MySQL.");
@@ -129,6 +132,17 @@ const AddProduct = () => {
           </div>
 
           <div className="input-row">
+
+          <div className="add-product-price">
+              <label>Description:</label>
+              <input
+                type="text"
+                required
+                className="product-data"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+            </div>
             <div className="add-product-price">
               <label>Price:</label>
               <input
@@ -140,6 +154,8 @@ const AddProduct = () => {
                 onChange={(e) => setPrice(e.target.value)}
               />
             </div>
+
+           
           </div>
 
           <label>Upload Image:</label>
