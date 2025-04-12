@@ -1,7 +1,8 @@
 import React from "react";
 import "./Home.css";
-
 import { useNavigate } from "react-router-dom";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import Button from "@mui/material/Button";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -11,34 +12,6 @@ const HomePage = () => {
       <div className="land-page-body">
         <header className="land-page-header">
           <div className="land-page-logo">MOS BURGERS</div>
-          <nav>
-            <ul className="land-page-nav-links">
-              <li>
-                <p onClick={() => navigate("/home")}>Home</p>
-              </li>
-
-              <li>
-                <p onClick={() => navigate("/customers")}>Manage Customers</p>
-              </li>
-              <li>
-                <p onClick={() => navigate("/stock")}>Inventory</p>
-              </li>
-              
-              
-
-              <li>
-                <p onClick={() => navigate("/placeOrder")}>Order Now</p>
-              </li>
-            </ul>
-          </nav>
-          <button
-            className="land-page-btn-cashier"
-            onClick={() => {
-              navigate("/");
-            }}
-          >
-            Logout
-          </button>
         </header>
 
         <section className="land-page-hero">
@@ -48,10 +21,29 @@ const HomePage = () => {
               Taste the difference. Fresh, handcrafted, and made just for you.
             </p>
 
-            
-
-
-
+            <div className="get-started-container">
+              <Button
+                variant="contained"
+                color="primary"
+                endIcon={<ArrowForwardIosIcon />}
+                size="large"
+                onClick={() => navigate("/home")}
+                sx={{
+                  borderRadius: "40px",
+                  fontSize: "1.4rem",
+                  padding: "16px 40px",
+                  textTransform: "none",
+                  boxShadow: "0 6px 15px rgba(0,0,0,0.2)",
+                  backgroundColor: "#e6b800",
+                  "&:hover": {
+                    backgroundColor: "#ffcc00",
+                    transform: "scale(1.06)",
+                  },
+                }}
+              >
+                Get Started
+              </Button>
+            </div>
           </div>
         </section>
       </div>

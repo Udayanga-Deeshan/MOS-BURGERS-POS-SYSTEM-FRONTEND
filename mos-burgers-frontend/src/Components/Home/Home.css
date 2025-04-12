@@ -6,7 +6,8 @@
 }
 
 :root {
-    --primary: #eb5712;
+    --primary:  #ffcc00;
+    ;
     --text-light: #ffffff;
     --text-dark: #2d3436;
     --overlay: rgba(0, 0, 0, 0.7);
@@ -45,41 +46,6 @@
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary);
-}
-
-.land-page-nav-links {
-    display: flex;
-    gap: 5rem;
-    list-style: none;
-    
-}
-
-.land-page-nav-links p {
-    color: var(--text-light);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    cursor: pointer;
-}
-
-.land-page-nav-links p:hover {
-    color: var(--primary);
-}
-
-.land-page-btn-cashier {
-    padding: 0.8rem 1.5rem;
-    background: var(--primary);
-    border: none;
-    border-radius: 50px;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.land-page-btn-cashier:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
 }
 
 
@@ -124,14 +90,14 @@ background-position: bottom;
 }
 
 
-
-
-
-
-
-
-
-
+.get-started-container {
+    display: flex;
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  
+  
 @media (max-width: 768px) {
     .land-page-header {
         padding: 1rem;

@@ -15,7 +15,7 @@ const Sidebar = () => {
       <h2 className="logo">MOS Burgers</h2>
       <ul className="menu">
         <li>
-          <Link to="/">
+          <Link to="/dashboard">
             <Home size={20} />
             <span>Dashboard</span>
           </Link>

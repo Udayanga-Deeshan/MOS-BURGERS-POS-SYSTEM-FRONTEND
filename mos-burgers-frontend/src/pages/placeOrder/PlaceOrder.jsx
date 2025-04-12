@@ -56,7 +56,6 @@ const PlaceOrder = () => {
   const removeFromCart = (itemId) => {
     setCart((prevCart) => prevCart.filter((item) => item.itemId !== itemId));
   };
-  
 
   const filteredProducts =
     selectedCategory === "All"
@@ -91,9 +90,14 @@ const PlaceOrder = () => {
                 className="product-image"
               />
               <h3>{product.itemName}</h3>
-              <p>Category: {product.category}</p>
+
               <p>Price: Rs.{product.price.toFixed(2)}</p>
-              <button onClick={() => addToCart(product)}>Add to Cart</button>
+              <button
+                style={{ marginTop: "10px" }}
+                onClick={() => addToCart(product)}
+              >
+                Add to Cart
+              </button>
             </div>
           ))}
         </div>

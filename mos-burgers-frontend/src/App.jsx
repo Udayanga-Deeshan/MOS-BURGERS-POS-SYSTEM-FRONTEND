@@ -15,8 +15,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/home" element={<HomePage />} />
+          
+          <Route path="/" element={<HomePage />} />
+          <Route path="/home" element={<Login />} />
           <Route path="/stock" element={<Inventory />} />
           <Route path="/customers" element={<CustomerManagement />} />
           <Route path="/add-product" element={<AddProduct/>}/>
