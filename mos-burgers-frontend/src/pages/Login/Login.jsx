@@ -1,49 +1,70 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 const Login = () => {
-  const [isRegistering, setIsRegistering] = useState(false);
+  const [credentials, setCredentials] = useState({ email: "", password: "" });
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const navigate = useNavigate();
+
+  const handleInputChange = (e) => {
+    setCredentials({ ...credentials, [e.target.name]: e.target.value });
+    setError(""); 
+    setSuccess(""); 
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:8080/api/user/login", credentials);
+      if (response.status === 200) {
+        setSuccess(" Login successful! Redirecting to dashboard...");
+        setError("");
+        setTimeout(() => {
+          navigate("/customers");
+        }, 4000);
+      }
+    } catch (err) {
+      setError(" Invalid email or password");
+      setSuccess("");
+    }
+  };
 
   return (
     <div className="login-container">
       <div className="login-box">
-        {isRegistering ? (
-          <>
-            <h2>Register Cashier</h2>
-            <form>
-              <div className="input-group">
-                <label>Full Name</label>
-                <input type="text" placeholder="Enter full name" required />
-              </div>
-              <div className="input-group">
-                <label>Email</label>
-                <input type="email" placeholder="Enter email" required />
-              </div>
-              <div className="input-group">
-                <label>Password</label>
-                <input type="password" placeholder="Enter password" required />
-              </div>
-              <button type="submit" className="btn-login">Register</button>
-            </form>
-            <p onClick={() => setIsRegistering(false)} className="toggle-form">Already have an account? Login</p>
-          </>
-        ) : (
-          <>
-            <h2>MOS Burgers</h2>
-            <form>
-              <div className="input-group">
-                <label>Email</label>
-                <input type="email" placeholder="Enter your email" required />
-              </div>
-              <div className="input-group">
-                <label>Password</label>
-                <input type="password" placeholder="Enter your password" required />
-              </div>
-              <button type="submit" className="btn-login">Login</button>
-            </form>
-            <p onClick={() => setIsRegistering(true)} className="toggle-form">Don't have an account? Register</p>
-          </>
-        )}
+        <h2>MOS Burgers</h2>
+        <form onSubmit={handleLogin}>
+          <div className="input-group">
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              value={credentials.email}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+          <div className="input-group">
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter your password"
+              value={credentials.password}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+
+          {error && <div className="error-message">{error}</div>}
+          {success && <div className="success-message">{success}</div>}
+
+          <button type="submit" className="btn-login">Login</button>
+        </form>
       </div>
     </div>
   );
