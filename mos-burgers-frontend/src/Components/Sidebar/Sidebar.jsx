@@ -6,6 +6,7 @@ import {
   ClipboardList,
   Users,
   LogOut,
+  FileText,
 } from "lucide-react";
 import "./Sidebar.css";
 
@@ -38,6 +39,13 @@ const Sidebar = () => {
             <span>Customers</span>
           </Link>
         </li>
+        <li>
+          <Link to="/order-history">
+            <FileText size={20} />
+            <span>Order History</span>
+          </Link>
+        </li>
+
         <li>
           <li>
             <Link to="/logout">

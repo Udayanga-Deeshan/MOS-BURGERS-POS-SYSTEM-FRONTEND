@@ -10,6 +10,7 @@ import AddProduct from "./pages/product/addproduct/AddProduct";
 import PlaceOrder from "./pages/placeOrder/PlaceOrder";
 import AddCustomer from "./pages/Customer/addcustomer/AddCustomer";
 import Dashboard from "./Components/dashboard/Dashboard";
+import OrderHistory from "./pages/orderHistory/OrderHistory";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/customers" element={<CustomerManagement />} />
           <Route path="/add-product" element={<AddProduct/>}/>
           <Route path="/place-order" element={<PlaceOrder/>}/>
+          <Route path="order-history" element={<OrderHistory/>}/>
           <Route path="/customer/add-customer" element={<AddCustomer/>}/>
         </Routes>
       </BrowserRouter>

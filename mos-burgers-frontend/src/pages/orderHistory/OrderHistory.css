@@ -1,0 +1,40 @@
+.order-history-container {
+    margin-left: 250px; 
+    padding: 2rem;
+    background-color: #111113; 
+    min-height: 100vh;
+    color: #fff;
+  }
+  
+  .order-history-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #f0f0f0;
+  }
+  
+  .order-card {
+    background-color: rgba(255, 255, 255, 0.05); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    transition: transform 0.2s ease;
+  }
+  
+  .order-card:hover {
+    transform: scale(1.01);
+  }
+  
+  .order-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+  
+  .order-info span {
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+  
+ 
+  
